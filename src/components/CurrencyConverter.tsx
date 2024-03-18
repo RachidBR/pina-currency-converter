@@ -12,7 +12,7 @@ import styles from "./CurrencyConverter.module.scss";
 
 function CurrencyConverter() {
   const { register, setValue, watch } = useForm<FormValues>({
-    resolver: yupResolver(CurrencyValidationSchema),
+    resolver: yupResolver(CurrencyValidationSchema) as any,
     defaultValues: {
       amountFrom: 0,
       amountTo: 0,
@@ -45,13 +45,22 @@ function CurrencyConverter() {
     };
 
     if (
-      (watchedFields.amountFrom  && lastUpdated === "from") ||
-      (watchedFields.amountTo  && lastUpdated === "to")
+      (watchedFields.amountFrom>=0  && lastUpdated === "from") ||
+      (watchedFields.amountTo>=0  && lastUpdated === "to")
     ) {
       convert();
     }
   }, [watchedFields.amountFrom,watchedFields.amountTo,watchedFields.currencyFrom,watchedFields.currencyTo, lastUpdated]);
 
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>, field: "amountFrom" | "amountTo") => {
+    let value = parseFloat(event.target.value);
+    if (value < 0) {
+      value = 0;
+    }
+    setValue(field, value);
+    setLastUpdated(field === "amountFrom" ? "from" : "to");
+  };
   return (
     <article className={styles.currencyConveter}>
       <form className={styles.currencyConveter__form}>
@@ -71,9 +80,10 @@ function CurrencyConverter() {
           </div>
             <input
               type="number"
-              {...register("amountFrom", {
-                onChange: () => setLastUpdated("from"),
-              })}
+              {...register("amountFrom")}
+              min={0}
+              onChange={(e) => handleInputChange(e, "amountFrom")}
+  
             />
         </section>
 
@@ -93,9 +103,9 @@ function CurrencyConverter() {
           </div>
             <input
               type="number"
-              {...register("amountTo", {
-                onChange: () => setLastUpdated("to"),
-              })}
+              min={0}
+              {...register("amountTo")}
+            onChange={(e) => handleInputChange(e, "amountTo")}
             />
         </section>
       </form>
