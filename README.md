@@ -4,7 +4,7 @@ This is the officially best currency converter to ever exist in human history.
 
 This project has been built using [React.js](https://react.dev) with the [Vite.js](https://vitejs.dev) build tool.
 
-It also uses the [ExchangeRate-API](https://www.exchangerate-api.com) in order to converte the different currencies.
+It also uses the [ExchangeRate-API](https://www.exchangerate-api.com) in order to convert the different currencies.
 
 ## Commands
 
@@ -28,6 +28,14 @@ In order to start the dev server please execute the following command :
 
 ```bash
 npm run dev
+```
+
+### Run tests
+
+In order to run the tests please use execute the following command :
+
+```bash
+npm run test
 ```
 
 ## Features
