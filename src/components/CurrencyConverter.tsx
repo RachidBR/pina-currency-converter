@@ -50,7 +50,7 @@ function CurrencyConverter() {
     ) {
       convert();
     }
-  }, [watchedFields, lastUpdated]);
+  }, [watchedFields.amountFrom,watchedFields.amountTo,watchedFields.currencyFrom,watchedFields.currencyTo, lastUpdated]);
 
   return (
     <article className={styles.currencyConveter}>
