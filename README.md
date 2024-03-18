@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Currency converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the officially best currency converter to ever exist in human history.
 
-Currently, two official plugins are available:
+This project has been built using [React.js](https://react.dev) with the [Vite.js](https://vitejs.dev) build tool.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It also uses the [ExchangeRate-API](https://www.exchangerate-api.com) in order to converter the different currencies.
 
-## Expanding the ESLint configuration
+## Commands
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Before using any command, make sure install the necessary node modules by running :
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm run i
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Build
+
+In order to build the project please execute the following command :
+
+```bash
+npm run build
+```
+
+### Start the server
+
+In order to start the dev server please execute the following command :
+
+```bash
+npm run dev
+```
+
+## Features
+
+Even if this is officially the best currency converter to ever exist, it can only convert the following currencies in both directions :
+
+- USD (United States dollar)
+- EUR (Euro)
+- YEN/JYP (Japanese Yen)
