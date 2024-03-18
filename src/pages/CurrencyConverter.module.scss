@@ -1,0 +1,65 @@
+.currencyConveter {
+  background-color: #f4efe8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: "Arial", sans-serif;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__form__currencyFrom,
+  &__form__currencyTo {
+    background-color: #d9c8b4;
+    padding: 15px;
+    border-radius: 8px;
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #5a4638;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #a58e7d;
+      border-radius: 4px;
+      background-color: #efebe5;
+      color: #5a4638;
+
+      max-width: 100%;
+      box-sizing: border-box; 
+      &:focus {
+        outline: 2px solid #88a375;
+      }
+    }
+
+    select option {
+      background-color: #f4efe8;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .currencyConveter {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__form__currencyFrom,
+    &__form__currencyTo {
+      flex: 1;
+    }
+  }
+}
