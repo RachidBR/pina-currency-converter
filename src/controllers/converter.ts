@@ -14,9 +14,3 @@ export const convertCurrency = async (fromCurrency : Currency, toCurrency :Curre
     }
   };
   
-  // export const convertUsdToEur = (amount:number) : Promise<ApiResponse | null> => convertCurrency('USD', 'EUR', amount);
-  // export const convertUsdToJpy = (amount:number) : Promise<ApiResponse | null> => convertCurrency('USD', 'JPY', amount);
-  // export const convertEurToUsd = (amount:number) : Promise<ApiResponse | null> => convertCurrency('EUR', 'USD', amount);
-  // export const convertEurToJpy = (amount:number) : Promise<ApiResponse | null> => convertCurrency('EUR', 'JPY', amount);
-  // export const convertJpyToUsd = (amount:number) : Promise<ApiResponse | null> => convertCurrency('JPY', 'USD', amount);
-  // export const convertJpyToEur = (amount:number) : Promise<ApiResponse | null> => convertCurrency('JPY', 'EUR', amount);
